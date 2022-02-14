@@ -1,0 +1,25 @@
+<div class="content justify-content-center">
+  <div class="justify-content-center">
+    <div align="center">
+      <h1>new game</h1>
+    </div>
+    <div class="container justify-content-center">
+      <h2 class="justify-content-center" align="center" >
+      <% @letters_array.each do |letter| %>
+        <span class="letter"><%= letter %></span>
+      <% end %>
+      </h2>
+    </div>
+    <div class="container col-6 mb-3 justify-content-center">
+      <form action="/score">
+        <div class="form-group">
+          <label class="form-label" for="attempt">What's the longest word you can find ?</label>
+          <input class="rounded form-control" type="text" name="attempt">
+          <%= hidden_field_tag 'letters', @letters_array.join%>
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <input class="rounded form-control" type="submit" value="Let's play !">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

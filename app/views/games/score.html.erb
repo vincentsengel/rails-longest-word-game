@@ -1,0 +1,11 @@
+<h1>Result</h1>
+<br>
+<span><%= @answer[0] %> <strong><%= @attempt.upcase %></strong><%= @answer[1] %></span>
+<br><br>
+<%= link_to new_path do %>
+  play again ?
+<% end %>
+
+<h3> your score is :
+<%= @score %>
+ points</h3>
